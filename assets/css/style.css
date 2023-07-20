@@ -1,0 +1,682 @@
+/* ---------------------------
+    Initial codes
+--------------------------- */
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Serif:ital,wght@0,600;0,700;0,800;1,500&family=Roboto:wght@400;500;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "work sans", sans-serif;
+}
+/* --- Variables --- */
+:root {
+  /* colors */
+  --pink-light: #f948b2;
+  --pink-medium: #ff42a5;
+  --pink-hover: #f32b92;
+  --white: #fff;
+  --offwhite: #d1d1d1;
+  --black: #000;
+  --blue: #4ec5f7;
+  --blue-hover: #27b4f1;
+  --dark-purple: #534c64;
+  --gradient: linear-gradient(180deg, #f948b2 0%, #8758f1 100%);
+  --dark-gray: rgba(11, 2, 35, 0.1);
+  --dark-gray-hover: rgba(11, 2, 35, 0.15);
+  /* font-size */
+  --h1-size: 6rem;
+  --h2-size: 3rem;
+  --h3-size: 1.25rem;
+  --paragraph-size: 1.125rem;
+  --line-height-medium: 2.5rem;
+  --line-height-small: 2rem;
+  /* others */
+  --section-padding: 120px;
+  --container: 1440px;
+  --primary-btn-padding: 0.875rem 2rem;
+}
+
+/* --- default stlings --- */
+h1 {
+  font-size: var(--h1-size);
+  font-weight: 800;
+  text-transform: uppercase;
+  /* 👇 copied from figma 👇 */
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h2,
+h4 {
+  font-size: var(--h2-size);
+  font-weight: 700;
+  /* 👇 copied from figma 👇 */
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h4 {
+  background: initial;
+  -webkit-text-fill-color: inherit;
+}
+h3 {
+  font-size: var(--h3-size);
+  font-weight: 600;
+  line-height: var(--line-height-medium);
+  color: inherit;
+}
+p {
+  font-size: var(--paragraph-size);
+  font-weight: 400;
+  line-height: var(--line-height-small);
+  color: var(--dark-purple);
+}
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: initial;
+}
+/* reusable classes */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+/* buttons */
+.btn-pink {
+  padding: var(--primary-btn-padding);
+  font-size: var(--paragraph-size);
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--pink-medium);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 31.25rem;
+  transition: all 0.1s ease-in-out;
+}
+.btn-pink:hover {
+  background-color: var(--pink-hover);
+}
+.btn-blue {
+  padding: var(--primary-btn-padding);
+  font-size: var(--paragraph-size);
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--blue);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 31.25rem;
+  transition: all 0.1s ease-in-out;
+}
+.btn-blue:hover {
+  background-color: var(--blue-hover);
+}
+.btn-white {
+  padding: var(--primary-btn-padding);
+  font-size: var(--paragraph-size);
+  font-weight: 600;
+  color: #ff42a5;
+  text-transform: uppercase;
+  background-color: var(--white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 31.25rem;
+  transition: all 0.1s ease-in-out;
+}
+.btn-white:hover {
+  background-color: var(--white-hover);
+}
+/* others */
+.section-padding {
+  padding-block: var(--section-padding);
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.span-color {
+  color: var(--pink-medium);
+}
+
+/* ---------------------------
+    Navbar section styling
+--------------------------- */
+#navbar {
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0.25rem 1.875rem 0 rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.6rem;
+  z-index: 1000;
+  background-color: var(--white);
+}
+.nav-container {
+  justify-content: space-between;
+}
+.logo {
+  gap: 1.25rem;
+}
+.nav-container .menu ul {
+  gap: 2rem;
+}
+.nav-container .menu ul li a {
+  font-size: 1.125rem;
+  color: #3c354f;
+  font-weight: 500;
+}
+.nav-container .menu ul li:not(:last-child) > a:hover {
+  color: var(--pink-medium);
+}
+.nav-btn {
+  gap: 1rem;
+  background-color: var(--dark-gray);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.nav-btn:hover {
+  background-color: var(--dark-gray-hover);
+}
+/* ---------------------------
+    Hero section styling
+--------------------------- */
+#hero-section {
+  background-image: url("../img/Group\ 14.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+.hero-container {
+  justify-content: space-between;
+}
+.hero-content > h2 {
+  text-transform: uppercase;
+  background: none;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+.hero-content ul {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-content ul li {
+  gap: 0.7rem;
+  color: #534c64;
+}
+/* ---------------------------
+    community section styling
+--------------------------- */
+#community-section {
+  background: hsl(330, 100%, 99%);
+}
+.community-container {
+  justify-content: space-between;
+  gap: 8rem;
+}
+.community-img img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.community-content {
+  max-width: 550px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+.community-content > p {
+  direction: rtl;
+}
+.purpose {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.community-content .purpose p:nth-child(1) {
+  font-weight: 500;
+}
+.community-content .purpose p:nth-child(2) {
+  font-weight: 700;
+}
+/* ---------------------------
+    online funny video section styling
+--------------------------- */
+.funny-video-content {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.funny-video-content h2 > span {
+  background: none;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+.funny-video-content p {
+  margin-top: 0.625rem;
+}
+.funny-videos {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.funny-videos .video {
+  width: 342px;
+  cursor: pointer;
+}
+.video-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.video-img img {
+  transition: all 0.1s ease-in-out;
+}
+.funny-videos .video .video-content {
+  margin-top: 1.5rem;
+}
+.video .video-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.video .video-img::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  /* line-height: 50px; */
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.video:hover > .video-img::before {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.video:hover .video-img::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+/* ---------------------------
+    instantly play section styling
+--------------------------- */
+.play-instantly-container {
+  justify-content: space-between;
+  gap: 10rem;
+}
+.instantly-img {
+  width: 50%;
+  position: relative;
+}
+.instantly-img .freefire-bg {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("../img/game\ c\ 1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 68% center;
+  border: 0.625rem solid white;
+  position: absolute;
+  bottom: -7.5rem;
+  left: -9.375rem;
+  border-radius: 0.625rem;
+}
+.instantly-content {
+  text-transform: capitalize;
+}
+.instantly-content h2 {
+  margin-bottom: 1.5rem;
+}
+.instantly-content h2 > span {
+  background: none;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+/* ---------------------------
+    category section styling
+--------------------------- */
+#category-section {
+  background: #fff9fc;
+}
+.category-items .item {
+  border-radius: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  gap: 1rem;
+  background: white;
+  box-shadow: 0px 0px px rgba(0, 0, 0, 0);
+  padding: 0.625rem;
+  cursor: pointer;
+  transition: border 0.2s ease-in-out;
+}
+.category-items .item p {
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  padding-right: 0.5rem;
+}
+.category-items .item:hover {
+  border: 1px solid var(--pink-light);
+}
+.category-items .item:hover > p {
+  color: var(--pink-light);
+}
+.category-items {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* ---------------------------
+    footer section styling
+--------------------------- */
+#footer {
+  background: #0b0223;
+}
+.footer-container {
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+}
+.footer-container a,
+.footer-container p {
+  color: var(--offwhite);
+  text-transform: capitalize;
+}
+.terms a,
+.copyright p {
+  color: #959595;
+  text-align: center;
+}
+.footer-container > .flex:not(.logo) {
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon {
+  gap: 20px;
+}
+.social-icon a {
+  font-size: 30px;
+}
+.hide {
+  display: none;
+}
+
+/* --------- responsive for mobile ---------- */
+@media screen and (max-width: 576px) {
+  /* reusable css */
+  :root {
+    --h1-size: 3.5rem;
+    --h2-size: 2rem;
+    --h3-size: 1.15rem;
+    --paragraph-size: 1rem;
+    --section-padding: 80px;
+    --container: auto;
+    --primary-btn-padding: 0.625rem 1.5rem;
+  }
+  .container {
+    padding-inline: 1.625rem;
+  }
+  /* ---------------------------
+      Navbar section responsive
+  --------------------------- */
+  #navbar {
+    position: static;
+    box-shadow: none;
+    border-bottom: 0;
+    background-color: var(--white);
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .nav-container .menu ul {
+    flex-direction: column;
+  }
+  /* ---------------------------
+      hero section responsive
+  --------------------------- */
+  #hero-section {
+    background-image: none;
+    margin-top: 120px;
+  }
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+  .hero-img img {
+    max-width: 100%;
+  }
+  /* ---------------------------
+      community section styling
+  --------------------------- */
+  .community-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .community-content {
+    align-items: center;
+    text-align: center;
+  }
+  .community-content p {
+    direction: initial;
+  }
+  .purpose {
+    display: initial;
+  }
+  /* ---------------------------
+      online funny video section responsive
+  --------------------------- */
+  #funny-video {
+    margin-top: 2rem;
+  }
+  .funny-videos {
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+  /* ---------------------------
+      play instantly responsive
+  --------------------------- */
+  .play-instantly-container {
+    flex-direction: column-reverse;
+    gap: 10rem;
+  }
+  .instantly-img {
+    width: 100%;
+  }
+  .instantly-img img {
+    max-width: 100%;
+  }
+  .instantly-img .freefire-bg {
+    width: 10rem;
+    height: 10rem;
+    bottom: -80px;
+    left: 1rem;
+    border-radius: 0.3125rem;
+    border: 0.3125rem solid white;
+  }
+}
+
+/* ------- Reponsive for small tablets --------- */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  :root {
+    --section-padding: 100px;
+    --container: auto;
+    --primary-btn-padding: 0.625rem 1.5rem;
+  }
+  .container {
+    padding: 2rem;
+  }
+  /* ---------------------------
+      Navbar section responsive
+  --------------------------- */
+  #navbar {
+    position: static;
+    box-shadow: none;
+    border-bottom: 0;
+    background-color: var(--white);
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .nav-container .menu ul {
+    flex-direction: column;
+  }
+  /* ---------------------------
+      hero section responsive
+  --------------------------- */
+  #hero-section {
+    background-image: none;
+    margin-top: 80px;
+  }
+  .hero-container {
+    flex-direction: column-reverse;
+    align-items: start;
+    gap: 5rem;
+  }
+  .hero-img img {
+    max-width: 100%;
+  }
+  /* ---------------------------
+      online funny video section responsive
+  --------------------------- */
+  #funny-video {
+    margin-top: 3rem;
+  }
+  .funny-videos {
+    /* align-items: center; */
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 2rem;
+  }
+  /* ---------------------------
+      play instantly responsive
+  --------------------------- */
+  .play-instantly-container {
+    flex-direction: column-reverse;
+    gap: 12rem;
+  }
+  .instantly-img {
+    width: 100%;
+  }
+  .instantly-img img {
+    width: 100%;
+  }
+  .instantly-img .freefire-bg {
+    width: 15rem;
+    height: 15rem;
+    bottom: -130px;
+    left: 1rem;
+    border-radius: 0.3125rem;
+    border: 0.4rem solid white;
+  }
+  /* ---------------------------
+      community section respo
+  --------------------------- */
+  .community-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .community-content {
+    align-items: center;
+    text-align: center;
+  }
+  .community-content p {
+    direction: initial;
+  }
+  .purpose {
+    display: initial;
+  }
+}
+
+/* ------- Reponsive for laptops --------- */
+@media screen and (min-width: 769px) and (max-width: 1366px) {
+  :root {
+    --h1-size: 5rem;
+    --h2-size: 2.5rem;
+    --h3-size: 1.25rem;
+    --paragraph-size: 1.15rem;
+    --section-padding: 100px;
+    --container: 1100px;
+  }
+  /* ---------------------------
+      hero section responsive
+  --------------------------- */
+  .hero-img {
+    max-width: 50%;
+  }
+  .hero-img img {
+    max-width: 100%;
+  }
+  /* ---------------------------
+      online funny video section responsive
+  --------------------------- */
+  #funny-video {
+    margin-top: 3rem;
+  }
+  .funny-videos {
+    row-gap: 3rem;
+  }
+  /* ---------------------------
+      community section respo
+  --------------------------- */
+  .community-container {
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  .community-content {
+    max-width: 420px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+  /* ---------------------------
+    instantly play section respo
+--------------------------- */
+  .play-instantly-container {
+    gap: 13rem;
+  }
+  .instantly-img img {
+    width: 100%;
+  }
+  .instantly-content {
+    width: 50%;
+  }
+  .instantly-img .freefire-bg {
+    width: 15rem;
+    height: 15rem;
+    border: 0.5rem solid white;
+    bottom: -6rem;
+    left: -7rem;
+    border-radius: 0.5rem;
+  }
+}
